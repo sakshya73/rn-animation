@@ -4,7 +4,7 @@ import Profile from './src/components/Profile';
 import React from 'react';
 
 const App = () => {
-  return <LoginScreen />;
+  return <CardSwiper />;
 };
 
 export default App;

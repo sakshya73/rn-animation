@@ -180,7 +180,7 @@ class LoginScreen extends React.Component {
               placeholderTextColor="#000"
             />
             <TextInput
-              placeholder="EMAIL"
+              placeholder="PASSWORD"
               style={styles.textInput}
               placeholderTextColor="#000"
             />
