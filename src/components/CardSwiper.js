@@ -11,12 +11,10 @@ import Article from './Article';
 
 const articleList = [
   {id: '1', uri: require('../../assets/avrn.jpeg')},
-  {id: '2', uri: require('../../assets/captain.jpeg')},
-  {id: '3', uri: require('../../assets/cat.jpeg')},
-  {id: '4', uri: require('../../assets/iron.jpeg')},
-  {id: '5', uri: require('../../assets/spidey.jpeg')},
-  {id: '6', uri: require('../../assets/thanos.jpeg')},
-  {id: '7', uri: require('../../assets/thor.jpeg')},
+  {id: '2', uri: require('../../assets/cat.jpeg')},
+  {id: '3', uri: require('../../assets/iron.jpeg')},
+  {id: '4', uri: require('../../assets/thanos.jpeg')},
+  {id: '5', uri: require('../../assets/thor.jpeg')},
 ];
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
