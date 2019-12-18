@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import {State, TapGestureHandler} from 'react-native-gesture-handler';
 
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import React from 'react';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -118,78 +119,80 @@ class LoginScreen extends React.Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <Animated.View
-          style={{
-            ...StyleSheet.absoluteFill,
-            transform: [{translateY: this.backgroundY}],
-          }}>
-          <Image
-            source={require('../../assets/avrn.jpeg')}
-            style={styles.backgroundImage}
-          />
-        </Animated.View>
-        <View style={styles.buttonContainer}>
-          <TapGestureHandler onHandlerStateChange={this.onStateChange}>
-            <Animated.View
-              style={{
-                ...styles.button,
-                opacity: this.buttonOpacity,
-                transform: [{translateY: this.buttonY}],
-              }}>
-              <Text style={styles.text}>SIGN IN</Text>
-            </Animated.View>
-          </TapGestureHandler>
-          <TapGestureHandler onHandlerStateChange={this.onStateChange}>
-            <Animated.View
-              style={{
-                ...styles.button,
-                backgroundColor: '#2e71dc',
-                opacity: this.buttonOpacity,
-                transform: [{translateY: this.buttonY}],
-              }}>
-              <Text style={{...styles.text, color: 'white'}}>
-                SIGN IN WITH FACEBOOK
-              </Text>
-            </Animated.View>
-          </TapGestureHandler>
+      <KeyboardAwareScrollView contentContainerStyle={{flex: 1}}>
+        <View style={styles.container}>
           <Animated.View
             style={{
               ...StyleSheet.absoluteFill,
-              height: SCREEN_HEIGHT / 3,
-              top: null,
-              opacity: this.textInputOpacity,
-              zIndex: this.textInputZIndex,
-              transform: [{translateY: this.textInputY}],
-              justifyContent: 'center',
+              transform: [{translateY: this.backgroundY}],
             }}>
-            <TapGestureHandler onHandlerStateChange={this.closeChange}>
-              <Animated.View style={styles.close}>
-                <Animated.Text
-                  style={{
-                    fontSize: 15,
-                    transform: [{rotate: concat(this.rotateCross, 'deg')}],
-                  }}>
-                  X
-                </Animated.Text>
+            <Image
+              source={require('../../assets/avrn.jpeg')}
+              style={styles.backgroundImage}
+            />
+          </Animated.View>
+          <View style={styles.buttonContainer}>
+            <TapGestureHandler onHandlerStateChange={this.onStateChange}>
+              <Animated.View
+                style={{
+                  ...styles.button,
+                  opacity: this.buttonOpacity,
+                  transform: [{translateY: this.buttonY}],
+                }}>
+                <Text style={styles.text}>SIGN IN</Text>
               </Animated.View>
             </TapGestureHandler>
-            <TextInput
-              placeholder="EMAIL"
-              style={styles.textInput}
-              placeholderTextColor="#000"
-            />
-            <TextInput
-              placeholder="PASSWORD"
-              style={styles.textInput}
-              placeholderTextColor="#000"
-            />
-            <Animated.View style={styles.button}>
-              <Text style={{fontSize: 20, fontWeight: 'bold'}}> SUBMIT</Text>
+            <TapGestureHandler onHandlerStateChange={this.onStateChange}>
+              <Animated.View
+                style={{
+                  ...styles.button,
+                  backgroundColor: '#2e71dc',
+                  opacity: this.buttonOpacity,
+                  transform: [{translateY: this.buttonY}],
+                }}>
+                <Text style={{...styles.text, color: 'white'}}>
+                  SIGN IN WITH FACEBOOK
+                </Text>
+              </Animated.View>
+            </TapGestureHandler>
+            <Animated.View
+              style={{
+                ...StyleSheet.absoluteFill,
+                height: SCREEN_HEIGHT / 3,
+                top: null,
+                opacity: this.textInputOpacity,
+                zIndex: this.textInputZIndex,
+                transform: [{translateY: this.textInputY}],
+                justifyContent: 'center',
+              }}>
+              <TapGestureHandler onHandlerStateChange={this.closeChange}>
+                <Animated.View style={styles.close}>
+                  <Animated.Text
+                    style={{
+                      fontSize: 15,
+                      transform: [{rotate: concat(this.rotateCross, 'deg')}],
+                    }}>
+                    X
+                  </Animated.Text>
+                </Animated.View>
+              </TapGestureHandler>
+              <TextInput
+                placeholder="EMAIL"
+                style={styles.textInput}
+                placeholderTextColor="#000"
+              />
+              <TextInput
+                placeholder="PASSWORD"
+                style={styles.textInput}
+                placeholderTextColor="#000"
+              />
+              <Animated.View style={styles.button}>
+                <Text style={{fontSize: 20, fontWeight: 'bold'}}> SUBMIT</Text>
+              </Animated.View>
             </Animated.View>
-          </Animated.View>
+          </View>
         </View>
-      </View>
+      </KeyboardAwareScrollView>
     );
   }
 }

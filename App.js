@@ -5,7 +5,7 @@ import React from 'react';
 import TabBar from './src/components/TabBar';
 
 const App = () => {
-  return <TabBar />;
+  return <LoginScreen />;
 };
 
 export default App;
